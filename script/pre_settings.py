@@ -78,6 +78,12 @@ def print_status_ping_main(rhost, status):
 def print_rport_service(rport, service):
     return f'{YELLOW}({rport}/{service.lower()}){RESET}'
 
+def print_iteration_time(iteration, time):
+    return f'{BOLD}{RED_BACKGROUND}=== ITERATION: {iteration} || TIME: {time} ==={RESET}'
+
+def print_csv_time(csv,time):
+    return f'{BOLD}{RED_BACKGROUND}=== CSV OUTPUT: {csv} || TIME: {time} ==={RESET}'
+
 def print_status_service(rport, service, status):
     return f'{BOLD}{BLUE}SERVICE{RESET}{print_rport_service(rport, service)}:{print_status_up(status)}'
 
@@ -103,10 +109,7 @@ def print_status_service_cleanup(rport, service, status, pre):
     text = 'restarting' if pre.lower() == 'pre' else 'cleanup'
     return f'{print_status_service_access(rport, service, status)} -> {BOLD}{GREEN}{text.upper()}{RESET}'
 
-def print_status_attack(rhost, rport, service, attack, status_ping, status_service, status_attack, output):
-    return f'{print_status_plus(status_attack)}{print_rhost_rport(rhost, rport)} >> {print_status_ping(status_ping)} - {print_status_service(rport, service, status_service)} >> {BOLD}{BLUE}{attack.upper()}{RESET} == {print_status_block(status_attack)} -> {BOLD}{output}{RESET}'
-
-def print_status_attack_inaccessible(rhost, rport, service, attack, attack_type, status_ping, status_service_pre, status_attack, status_service_post, remark):
+def print_status_attack(rhost, rport, service, attack, attack_type, status_ping, status_service_pre, status_attack, status_service_post, remark):
     return f'{print_status_plus(status_attack)}{print_rhost_rport(rhost, rport)}[{BOLD}{MAGENTA}{attack_type.upper()}{RESET}] >> {print_status_ping(status_ping)} - {print_status_service(rport, service, status_service_pre)} >> {BOLD}{MAGENTA}{attack.upper()}{RESET} == {print_status_block(status_attack)} -> {print_status_service_access(rport, service, status_service_post)} -> {BOLD}{remark.upper()}{RESET}'
 
 ####################################

@@ -16,6 +16,15 @@ success_exploit_dvwa = 'Web exploit successful'
 fail_exploit_dvwa = 'Web exploit successful but blocked by IPS'
 fail_exploit_dvwa_full = 'Web exploit blocked'
 
+# ports lisr
+HTTP_PORT = 80
+FTP_PORT = 21
+IRC_PORT = 6667
+IRC_PORT_CLOUD = 8000
+SAMBA_PORT = 445
+SAMBA_PORT_CLOUD = 8001
+SSH_PORT = 22
+
 # attack list
 attacks = {
     'sqli': {
@@ -23,7 +32,7 @@ attacks = {
         'attack': 'SQL Injection',
         'mitre': 'TA0010: Exfiltration',
         'cwe': 'CWE-89: Improper Neutralization of Special Elements used in an SQL Command ("SQL Injection")',
-        'port': 80,
+        'port': HTTP_PORT,
         'service': 'http',
         'type': 'Web',
         'path': '/etc/init.d/apache2',
@@ -37,7 +46,7 @@ attacks = {
         'attack': 'Cross Site Scripting (XSS)',
         'mitre': 'TA0004: Privilege Escalation',
         'cwe': 'CWE-79: Improper Neutralization of Input During Web Page Generation (\'Cross-site Scripting\')',
-        'port': 80,
+        'port': HTTP_PORT,
         'service': 'http',
         'type': 'Web',
         'path': '/etc/init.d/apache2',
@@ -51,7 +60,7 @@ attacks = {
         'attack': 'OS Command Injection',
         'mitre': 'TA0002: Execution',
         'cwe': 'CWE-78: OS Command Injection',
-        'port': 80,
+        'port': HTTP_PORT,
         'service': 'http',
         'type': 'Web',
         'path': '/etc/init.d/apache2',
@@ -65,7 +74,7 @@ attacks = {
         'attack': 'CVE-2011-2523: VSFTPD Backdoor Command Execution',
         'mitre': 'TA0002: Execution',
         'cwe': 'CWE-1104: Use of Unmaintained Third Party Components',
-        'port': 21,
+        'port': FTP_PORT,
         'service': 'ftp',
         'type': 'Server',
         'path': '/etc/init.d/xinetd',
@@ -80,7 +89,7 @@ attacks = {
         'attack': 'CVE-2010-2075: UnrealIRCd Remote Code Execution',
         'mitre': 'TA0001: Initial Access',
         'cwe': 'CWE-1104: Use of Unmaintained Third Party Components',
-        'port': {6667, 8000},
+        'port': {IRC_PORT, IRC_PORT_CLOUD},
         'service': 'irc',
         'type': 'Server',
         'path': '/usr/bin/unrealircd',
@@ -95,7 +104,7 @@ attacks = {
         'attack': 'CVE-2007-2447: Samba "username map script" Command Execution',
         'mitre': 'TA0002: Execution',
         'cwe': 'CWE-1104: Use of Unmaintained Third Party Components',
-        'port': {445, 8001},
+        'port': {SAMBA_PORT, SAMBA_PORT_CLOUD},
         'service': 'samba',
         'type': 'Server',
         'path': '/etc/init.d/samba',
@@ -109,7 +118,7 @@ attacks = {
         'attack': 'SSH Bruteforce',
         'mitre': 'T1110.001: Brute Force (Password Guessing)',
         'cwe': 'CWE-307: Improper Restriction of Excessive Authentication Attempts',
-        'port': 22,
+        'port': SSH_PORT,
         'service': 'ssh',
         'type': 'Server',
         'path': '/etc/init.d/ssh',
@@ -123,7 +132,7 @@ attacks = {
         'attack': 'Network Enumeration (nmap)',
         'mitre': 'T1046: Network Service Discovery',
         'cwe': 'CWE-200: Exposure of Sensitive Information to an Unauthorized Actor',
-        'port': 22,
+        'port': SSH_PORT,
         'service': 'ssh',
         'type': 'Network',
         'path': '/etc/init.d/ssh',
@@ -137,7 +146,7 @@ attacks = {
         'attack': 'Network Enumeration (nmap)',
         'mitre': 'T1046: Network Service Discovery',
         'cwe': 'CWE-200: Exposure of Sensitive Information to an Unauthorized Actor',
-        'port': {445, 8001},
+        'port': {SAMBA_PORT, SAMBA_PORT_CLOUD},
         'service': 'samba',
         'type': 'Network',
         'path': '/etc/init.d/samba',
@@ -151,7 +160,7 @@ attacks = {
         'attack': 'SYN Flood DDoS',
         'mitre': 'T1498: Network Denial of Service (Direct Network Flood)',
         'cwe': 'CWE-400: Uncontrolled Resource Consumption',
-        'port': 80,
+        'port': HTTP_PORT,
         'service': 'http',
         'type': 'Network',
         'path': '/etc/init.d/apache2',
@@ -165,7 +174,7 @@ attacks = {
         'attack': 'HTTP Slowloris DoS',
         'mitre': 'T1498: Network Denial of Service (Direct Network Flood)',
         'cwe': 'CWE-400: Uncontrolled Resource Consumption',
-        'port': 80,
+        'port': HTTP_PORT,
         'service': 'http',
         'type': 'Network',
         'path': '/etc/init.d/apache2',
