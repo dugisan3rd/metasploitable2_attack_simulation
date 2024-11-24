@@ -5,7 +5,7 @@
 pip3 install -r requirements.txt
 ```
 
-2. install binary
+2. install binaries
 ```
-sudo apt install hping3 -y
+sudo apt install hping3 slowhttptest -y
 ```
