@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import subprocess
 import sys
 import time
 import os
@@ -8,7 +7,6 @@ import os
 # installed packages
 from pwn import *
 import argparse
-import requests
 import netifaces
 import csv
 

@@ -1,0 +1,8 @@
+requests
+netifaces
+paramiko
+pwntools
+pwn
+argparse
+paramiko
+csv

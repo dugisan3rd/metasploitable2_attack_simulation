@@ -60,7 +60,7 @@ def log_attack(writer, siteid, lhost, rhost, date, iteration, attacks):
 
 def main():
     try:
-        parser = argparse.ArgumentParser(description=pre_settings.print_argparse_desc('Main Script'), epilog=f'{pre_settings.print_argparse_epilog(f"python3 {sys.argv[0]} --rhost 10.251.5.5 --lhost 10.251.5.4 --siteid 506040 --iteration 3 --thread 5")}')
+        parser = argparse.ArgumentParser(description=pre_settings.print_argparse_desc('Main Script (Cloud)'), epilog=f'{pre_settings.print_argparse_epilog(f"python3 {sys.argv[0]} --rhost 10.251.5.5 --lhost 10.251.5.4 --siteid 506040 --iteration 3 --thread 5")}')
         parser.add_argument('--rhost', help='IP Address (Target)', required=True)
         parser.add_argument('--lhost', help='IP Address (Attacker)', required=True, default=(netifaces.ifaddresses('eth0')[netifaces.AF_INET][0]['addr'] if 'eth0' in netifaces.interfaces() else '127.0.0.1'))
         parser.add_argument('--siteid', help='Site ID', required=True)

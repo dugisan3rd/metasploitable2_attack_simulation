@@ -1,2 +1,4 @@
-# metasploitable2_attack_simulation
- attack simulation for metasploitable2
+# preprequisite
+```
+pip3 install -r requirements.txt
+```
