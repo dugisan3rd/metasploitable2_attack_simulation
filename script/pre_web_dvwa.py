@@ -25,14 +25,14 @@ context.log_level = pre_settings.debug_critical
 def reset(rhost, rport, attacks):
     try:
         status_ping = pre_ping_check.check(rhost)
-        status_service_pre = pre_services_check.check_http(rhost, rport)
+        status_service_pre = pre_services_check.check(rhost, rport)
 
         if not status_service_pre:
             log.info(pre_settings.print_status_service_cleanup(rport, attacks['service'], status_service_pre, 'pre'))
             status_pre_service_restart = pre_services_restart.restart_service(rhost, attacks["path"])
             time.sleep(3)
 
-        status_service_pre = pre_services_check.check_http(rhost, rport)
+        status_service_pre = pre_services_check.check(rhost, rport)
 
         status_service_restart = False
         status_service_post = status_service_pre
@@ -47,7 +47,7 @@ def reset(rhost, rport, attacks):
                         success = re.search('Setup successful', r.text)
                         if success is not None:
                             status_service_restart = True
-                            status_service_post = pre_services_check.check_http(rhost, rport)
+                            status_service_post = pre_services_check.check(rhost, rport)
 
                             return True
 
