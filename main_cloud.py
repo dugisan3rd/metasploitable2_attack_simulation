@@ -103,7 +103,7 @@ def main():
                 # network
                 log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_network_enum_nmap.exploit(rhost, pre_attacks.SSH_PORT, pre_attacks.attacks.get('nmap_ssh')))
                 log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_network_enum_nmap.exploit(rhost, pre_attacks.SAMBA_PORT_CLOUD, pre_attacks.attacks.get('nmap_samba')))
-                log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_network_dos_syn.exploit(rhost, pre_attacks.HTTP_PORT, pre_attacks.attacks.get('dos_syn')))
+                log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_network_dos_syn.exploit(rhost, pre_attacks.HTTP_PORT, pre_attacks.attacks.get('dos_syn'), 1, 1))
                 log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_network_dos_slowloris.exploit(rhost, pre_attacks.HTTP_PORT, pre_attacks.attacks.get('dos_slowloris'), num_sockets=200, sleep_buffer=20))
 
         print(pre_settings.print_csv_time(filename, datetime.now()))
