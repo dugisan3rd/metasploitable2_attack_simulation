@@ -87,6 +87,13 @@ def main():
                 # banner
                 print(pre_settings.print_iteration_time(iteration, datetime.now()))
 
+                # nmap
+                log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_network_enum_nmap.exploit(rhost, pre_attacks.SSH_PORT, pre_attacks.attacks.get('nmap_ssh')))
+                log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_network_enum_nmap.exploit(rhost, pre_attacks.SAMBA_PORT, pre_attacks.attacks.get('nmap_samba')))
+
+                # ssh brute force
+                log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_server_ssh_bruteforce.exploit(rhost, pre_attacks.SSH_PORT, pre_attacks.attacks.get('bruteforce_ssh'), thread))
+
                 # web attack
                 log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_web_dvwa_sqli.exploit(rhost, pre_attacks.HTTP_PORT, pre_attacks.attacks.get('sqli')))
                 log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_web_dvwa_xss.exploit(rhost, pre_attacks.HTTP_PORT, pre_attacks.attacks.get('xss')))
@@ -96,11 +103,8 @@ def main():
                 log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_server_vsftpd.exploit(rhost, pre_attacks.FTP_PORT, pre_attacks.attacks.get('vsftpd')))
                 log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_server_unrealircd.exploit(rhost, pre_attacks.IRC_PORT, pre_attacks.attacks.get('unrealircd')))
                 log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_server_samba.exploit(rhost, pre_attacks.SAMBA_PORT, pre_attacks.attacks.get('samba')))
-                log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_server_ssh_bruteforce.exploit(rhost, pre_attacks.SSH_PORT, pre_attacks.attacks.get('bruteforce_ssh'), thread))
-
-                # network
-                log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_network_enum_nmap.exploit(rhost, pre_attacks.SSH_PORT, pre_attacks.attacks.get('nmap_ssh')))
-                log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_network_enum_nmap.exploit(rhost, pre_attacks.SAMBA_PORT, pre_attacks.attacks.get('nmap_samba')))
+                
+                # dos
                 log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_network_dos_syn.exploit(rhost, pre_attacks.HTTP_PORT, pre_attacks.attacks.get('dos_syn'), 1, 1))
                 log_attack(writer, siteid, lhost, rhost, datetime.now(), iteration, exploit_network_dos_slowloris.exploit(rhost, pre_attacks.HTTP_PORT, pre_attacks.attacks.get('dos_slowloris'), num_sockets=200, sleep_buffer=20))
 
