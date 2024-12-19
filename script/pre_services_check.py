@@ -36,7 +36,7 @@ def check(rhost, rport):
 def check_http(rhost, rport):
     try:
         r = requests.get(f'http://{rhost}:{rport}', timeout=3)
-        if r.status_code == 200:
+        if r.status_code == 200 and 'dvwa' in str(r.text):
             return True
         else:
             return False
