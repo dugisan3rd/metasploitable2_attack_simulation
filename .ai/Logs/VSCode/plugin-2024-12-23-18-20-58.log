@@ -1,0 +1,12 @@
+[12/23/2024, 6:20:58 PM] info: Logging was started to file.
+[12/23/2024, 6:20:58 PM] info: Start application inspector initialization
+[12/23/2024, 6:20:58 PM] info: Hide developer mode UI
+[12/23/2024, 6:20:58 PM] info: Infrastructure Configurations: {"port":8001,"infrastructureAssemblyFolderPath":"C:\\Users\\Farzul\\AppData\\Local\\Application Inspector Analyzer","applicationResourcesFolderPath":"C:\\Users\\Farzul\\AppData\\Local\\Application Inspector Analyzer","scanTargetFolderPath":"g:\\Other computers\\D7X\\OrenG\\Project\\GITN\\2024\\mygovnet\\3.Assessment\\1.AttackSim\\github\\metasploitable2_attack_simulation","isDebugging":false,"logLevel":{"q8_1":"Error","r8_1":5,"type":5,"key":"Settings.LogLevel.Error.Text"},"logDir":"g:\\Other computers\\D7X\\OrenG\\Project\\GITN\\2024\\mygovnet\\3.Assessment\\1.AttackSim\\github\\metasploitable2_attack_simulation\\.ai\\Logs\\Infrastructure\\2024-12-23-18-20-58","tipsFoundNotificationThreshold":1000,"similarIssuesFoundNotificationThreshold":1000,"applicationLocalDataFolderPath":"g:\\Other computers\\D7X\\OrenG\\Project\\GITN\\2024\\mygovnet\\3.Assessment\\1.AttackSim\\github\\metasploitable2_attack_simulation\\.ai"}
+[12/23/2024, 6:20:58 PM] info: Start infrastructure initialization
+[12/23/2024, 6:20:58 PM] info: Infrastructure was started
+[12/23/2024, 6:21:11 PM] info: Initialize aie integration isn't initialized
+[12/23/2024, 6:21:11 PM] info: Infrastructure was initialized
+[12/23/2024, 6:21:11 PM] info: Infrastructure Installer was deleted
+[12/23/2024, 6:21:12 PM] info: Clean up logs files was started
+[12/23/2024, 6:21:12 PM] info: Clean up logs files was finished
+[12/23/2024, 6:21:17 PM] info: Project was created. Id: 732e799e-c6e5-40a7-b8c0-454389cc0750
