@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+# supress warning
+import warnings
+warnings.filterwarnings("ignore", category=SyntaxWarning)
+
 import sys
 import time
 import os
